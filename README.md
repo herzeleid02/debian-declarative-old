@@ -11,5 +11,12 @@ Bootstrapping process is done via extracting OCI containers onto host filesystem
 
 ## Structuring
 `build.sh` should only invoke other scripts (the one you edit)
+
 `main.sh` the global script -- You should **not** edit this file. This script maintains basic chroot configuration (locale setup, adding apt https repositories, etc, etc)
+
 `functions/` -- Directory with scripts (something similar "playbooks" and "modules" in [Ansible](https://github.com/ansible/ansible)). This directory contents should be the same across all branches and you should edit existing files only to fix their functionality, not change or add new. To add new functionality you should create a new script.
+
+To create a new system setup you should:
+1) create a new branch
+2) add new "functions" in the respective directory if necessary
+3) edit build.sh
