@@ -20,3 +20,8 @@ To create a new system setup you should:
 1) create a new branch
 2) add new "functions" in the respective directory if necessary
 3) edit build.sh
+
+## Global variables for `build.sh`
+`hostname`
+`username` (implying that this project covers single-user installation 😖)
+`apt_packages` (space would be the delimiter)
