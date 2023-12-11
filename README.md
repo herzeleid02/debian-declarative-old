@@ -36,3 +36,5 @@ To create a new system setup you should:
 The better thing to do (which i will implement right now as im typing this text) is to edit the running container and only then exporting it.
 
 Why? Because podman manages `/dev/null` and other special files correctly and theres no need to create stuff or mount host `/proc` and other special files and directories. (We should reduce jank to a minimum)
+
+Maybe it should have a single dockerfile (?) (but then how its going to import itself?)
