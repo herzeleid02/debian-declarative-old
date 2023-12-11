@@ -53,3 +53,7 @@ Maybe it should have a single dockerfile (?) (but then how its going to import i
 You can replace the "make.sh" script with Containerfile and nothing will change but the requirement in having another executable that will remove the temporary image.
 
 **NO ARRAYS**. They are not part of POSIX sh.
+
+About podman images -- i used `--squash` option so that the newly built image has only one layer (tar file when importing it)
+
+Maybe i should just direct import it as a dir :)
