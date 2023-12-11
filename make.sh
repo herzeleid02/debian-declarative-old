@@ -29,6 +29,6 @@ podman run \
 #podman exec ${container_name} "/bin/sh -c "/usr/bin/apt-get -y install ${apt_packages}""
 
 # beware -- using the same string for the latter container image
-podman commit ${container_name} ${container_name}
+podman commit --squash ${container_name} ${container_name} # why squash? it creates a single tar
 podman save ${container_name} | tar -xpf - -O | tar -xpf - -C ${chroot_directory}
 podman image rm ${container_name}

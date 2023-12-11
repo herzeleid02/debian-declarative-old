@@ -16,7 +16,6 @@ apt-get install -y systemd bash less
 for user in $users; do
 	useradd -s /bin/bash -m $user
 done
-sleep 20 # debug
 
 ### installing user-defined packages (build.sh)
 apt-get install -y ${apt_packages}
