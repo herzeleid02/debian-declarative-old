@@ -1,8 +1,12 @@
-#!/bin/bash # probably no posix :(
+#!/bin/bash 
+# probably no posix :(
 
-# these ones should be passed from the build script
-#chroot_directory=""
-#hostname=""
+#image="debian:12"
+#hostname="debiandeclarative"
+#username="debianuser"
+#apt_packages="vim neofetch zsh"
+
+echo $apt_packages # debug
 
 install_systemd(){
 	chroot ${chroot_directory} << EOS
@@ -19,4 +23,5 @@ EOS
 install_bash(){
 	chroot ${chroot_directory} << EOS
 apt-get install -y bash
+EOS
 }

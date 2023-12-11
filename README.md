@@ -10,7 +10,7 @@ Moreover, this project is tied to [SquashLinux](https://github.com/herzeleid02/s
 Bootstrapping process is done via extracting OCI containers onto host filesystems, instead of regular bootstrap.
 
 ## Structuring
-`build.sh` should only invoke other scripts (the one you edit)
+`build.sh` is the one you edit -- try to invoke other scrips if possible
 
 `main.sh` the global script -- You should **not** edit this file. This script maintains basic chroot configuration (locale setup, adding apt https repositories, etc, etc)
 
@@ -22,6 +22,10 @@ To create a new system setup you should:
 3) edit build.sh
 
 ## Global variables for `build.sh`
+`image` (OCI image name)
+
 `hostname`
+
 `username` (implying that this project covers single-user installation 😖)
+
 `apt_packages` (space would be the delimiter)
