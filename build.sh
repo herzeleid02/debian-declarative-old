@@ -7,6 +7,8 @@ export hostname="debiandeclarative"
 export username="debianuser"
 export apt_packages="vim neofetch zsh"
 
+export project_directory="./" # (dirty hack) TODO: replace it
+
 export chroot_directory="$1" # do not access $1 ever again
 
 echo "run as root"
