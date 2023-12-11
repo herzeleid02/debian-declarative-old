@@ -9,7 +9,7 @@ Moreover, this project is tied to [SquashLinux](https://github.com/herzeleid02/s
 
 Bootstrapping process is done via extracting OCI containers onto host filesystems, instead of regular bootstrap.
 
-One of the principles for this project is to also eliminate any "jank" in it's core functionality.
+One of the principles for this project is to also eliminate any "jank" in it's core functionality. (its jank already)
 
 ## Structuring
 `build.sh` is the one you edit -- try to invoke other scrips if possible
