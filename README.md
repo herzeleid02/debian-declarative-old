@@ -38,7 +38,7 @@ To create a new system setup you should:
 
 `hostname`
 
-`username` (implying that this project covers single-user installation 😖)
+`users` ~~(implying that this project covers single-user installation 😖)~~
 
 `apt_packages` (space would be the delimiter)
 
@@ -51,3 +51,5 @@ Maybe it should have a single dockerfile (?) (but then how its going to import i
 
 ### Reasons against `Containerfile`
 You can replace the "make.sh" script with Containerfile and nothing will change but the requirement in having another executable that will remove the temporary image.
+
+**NO ARRAYS**. They are not part of POSIX sh.

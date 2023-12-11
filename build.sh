@@ -1,9 +1,9 @@
 #!/bin/bash 
-# no posix :(
+set -o posix
 
 export container_image="debian:12"
 export hostname="debiandeclarative"
-export username="debianuser"
+export users="debianuser chuck"
 export apt_packages="vim neofetch zsh fish cowsay htop"
 
 export project_directory="./" # (dirty hack) TODO: replace it
