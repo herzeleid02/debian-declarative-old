@@ -22,7 +22,8 @@ fi
 # to be replaced with containerfile
 #podman run --rm --name ${container_name} --volume ${project_directory}:${project_mount}:z -it ${container_image} /bin/bash
 # use the "main.sh" ""function""
-podman run --name ${container_name} --volume ${project_directory}:${project_mount}:z ${container_image} ${project_mount}/main.sh
+podman run --name ${container_name} --volume ${project_directory}:${project_mount}:z ${container_image} ${project_mount}/main.sh "$@"
+podman exec ${container_name} "/bin/sh -c "/usr/bin/apt-get -y install ${apt_packages}""
 
 # beware -- using the same string for the latter container image
 podman commit ${container_name} ${container_name}

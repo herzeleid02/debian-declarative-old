@@ -20,12 +20,18 @@ One of the principles for this project is to also eliminate any "jank" in it's c
 
 `make.sh` -- "Makefile" for the project. Basically, I reinvented what people usually call a `Dockerfile`.
 
+```
+Note: all three share the same their variables
+build.sh --> main.sh --> make.sh
+```
+
 `functions/` -- Directory with scripts (something similar "playbooks" and "modules" in [Ansible](https://github.com/ansible/ansible)). This directory contents should be the same across all branches and you should edit existing files only to fix their functionality, not change or add new. To add new functionality you should create a new script.
 
 To create a new system setup you should:
 1) create a new branch
 2) add new "functions" in the respective directory if necessary
 3) edit build.sh
+4) run build.sh
 
 ## Global variables for `build.sh`
 `image` (OCI image name)
