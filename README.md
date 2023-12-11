@@ -29,3 +29,6 @@ To create a new system setup you should:
 `username` (implying that this project covers single-user installation 😖)
 
 `apt_packages` (space would be the delimiter)
+
+## Notes
+The better thing to do (which i will implement right now as im typing this text) is to edit the running container and only then exporting it.
