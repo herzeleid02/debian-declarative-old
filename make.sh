@@ -32,3 +32,4 @@ podman run \
 podman commit --squash ${container_name} ${container_name} # why squash? it creates a single tar
 podman save ${container_name} | tar -xpf - -O | tar -xpf - -C ${chroot_directory}
 podman image rm ${container_name}
+podman rm ${container_name}
