@@ -8,6 +8,8 @@ project_mount="/opt/project/"
 #build_root="/tmp/iso-$(date +%d%m%Y)-$(tr -dc a-z </dev/urandom | head -c 4)" # disabled for now
 container_name="bootstrap-$(tr -dc a-z </dev/urandom | head -c 4)"
 
+project_directory=$(realpath ${project_directory})
+
 echo "run as root"
 
 if [ -z "$1" ]; then
@@ -17,16 +19,12 @@ fi
 
 # janky replacement for the installation function script :( (maybe i should make a separate file :/ )
 
+# to be replaced with containerfile
+#podman run --rm --name ${container_name} --volume ${project_directory}:${project_mount}:z -it ${container_image} /bin/bash
+# use the "main.sh" ""function""
+podman run --name ${container_name} --volume ${project_directory}:${project_mount}:z ${container_image} ${project_mount}/main.sh
 
-podman_export(){
-	# to be replaced with containerfile
-	#podman run --rm --name ${container_name} --volume ${project_directory}:${project_mount}:z -it ${container_image} /bin/bash
-	podman run --name ${container_name} --volume ${project_directory}:${project_mount}:z -it ${container_image} "/bin/bash -c main_sh"
-	
-	# beware -- using the same string for the latter container image
-	podman commit ${container_name} ${container_name}
-	
-	podman save ${container_image} | tar -xpf - -O | tar -xpf - -C ${chroot_directory} # no cleanup? kek 
-	
-	podman image rm ${container_name}
-}
+# beware -- using the same string for the latter container image
+podman commit ${container_name} ${container_name}
+podman save ${container_image} | tar -xpf - -O | tar -xpf - -C ${chroot_directory} # no cleanup? kek 
+podman image rm ${container_name}
