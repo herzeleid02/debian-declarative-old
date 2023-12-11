@@ -23,6 +23,7 @@ project_mount="/opt/project/"
 
 container_name="bootstrap-$(tr -dc a-z </dev/urandom | head -c 4)"
 
+# to be replaced with containerfile
 #podman run --rm --name ${container_name} --volume ${project_directory}:${project_mount}:z -it ${container_image} /bin/bash
 podman run --name ${container_name} --volume ${project_directory}:${project_mount}:z -it ${container_image} /bin/bash
 
