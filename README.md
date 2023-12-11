@@ -9,6 +9,8 @@ Moreover, this project is tied to [SquashLinux](https://github.com/herzeleid02/s
 
 Bootstrapping process is done via extracting OCI containers onto host filesystems, instead of regular bootstrap.
 
+One of the principles for this project is to also eliminate any "jank" in it's core functionality.
+
 ## Structuring
 `build.sh` is the one you edit -- try to invoke other scrips if possible
 
@@ -32,3 +34,5 @@ To create a new system setup you should:
 
 ## Notes
 The better thing to do (which i will implement right now as im typing this text) is to edit the running container and only then exporting it.
+
+Why? Because podman manages `/dev/null` and other special files correctly and theres no need to create stuff or mount host `/proc` and other special files and directories. (We should reduce jank to a minimum)
