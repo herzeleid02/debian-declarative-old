@@ -5,7 +5,8 @@
 # dirty, but helps to parse args fast
 
 jank="yes" # kek
-${project_directory}/build.sh "$@" 
+project_directory=$(dirname $(realpath $0))
+${project_directory}/build.sh "$@"
 
 echo "installing in chroot..." # debug
 apt-get update
@@ -13,7 +14,7 @@ apt-get upgrade -y
 apt-get install -y systemd bash # debug, currently wip
 ### installing user-defined packages (build.sh)
 sleep 10 # debug 
-"echo sneeding...." # debug
+echo "sneeding...." # debug
 apt-get install -y ${apt_packages} 
 
 # invoke other functions
