@@ -27,7 +27,9 @@ container_name="bootstrap-$(tr -dc a-z </dev/urandom | head -c 4)"
 #podman run --rm --name ${container_name} --volume ${project_directory}:${project_mount}:z -it ${container_image} /bin/bash
 podman run --name ${container_name} --volume ${project_directory}:${project_mount}:z -it ${container_image} /bin/bash
 
-podman save ${container_name} | tee
+# beware -- using the same string for the latter container image
+podman commit ${container_name} ${container_name}
 
+podman save ${container_image} | tar ${overwrite_key} -xpf - -O | tar -v ${overwrite_key} -xpf - -C ${chroot_directory} # no cleanup? kek 
 
-# podman rm ${container_name} # TODO
+podman image rm ${container_name}

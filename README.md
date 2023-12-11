@@ -11,6 +11,8 @@ Bootstrapping process is done via extracting OCI containers onto host filesystem
 
 One of the principles for this project is to also eliminate any "jank" in it's core functionality. (its jank already)
 
+11 December 2023, Monday, Week 50 -- im rewriting the project again to use containerfiles to build images more gracefully
+
 ## Structuring
 `build.sh` is the one you edit -- try to invoke other scrips if possible
 

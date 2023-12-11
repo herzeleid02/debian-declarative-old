@@ -15,7 +15,7 @@ echo "run as root"
 
 if [ -z "$1" ]; then
 	echo "provide a chroot directory"
-	#exit 1
+	exit 1
 fi
 
 printf "%i\n" 1
