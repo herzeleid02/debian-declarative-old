@@ -1,7 +1,6 @@
 #!/bin/bash 
 # no posix :(
 
-# 
 export container_image="debian:12"
 export hostname="debiandeclarative"
 export username="debianuser"

@@ -7,7 +7,7 @@ apt-get update
 apt-get upgrade -y
 apt-get install -y systemd bash # debug, currently wip
 ### installing user-defined packages (build.sh)
-#apt-get install -y ${apt_packages} # invoked in make.sh
+#apt-get install -y ${apt_packages} # invoked in make.sh #TODO: make awk parser of packages
 
 # invoke other functions
 # there should be a for cycle with files in function directory :) #TODO
