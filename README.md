@@ -1,3 +1,5 @@
+NOTE: this repository is depreacted, visit [debian-declarative](https://github.com/herzeleid02/debian-declarative)
+
 # debian-declarative
 
 ## About
