@@ -25,6 +25,14 @@ Note: all three share the same their variables
 build.sh --> main.sh --> make.sh
 ```
 
+## debian-setup-user.sh
+Function to install and setup doas. You must provide list of users (as one string) to allow them to use doas.
+
+Example:
+```
+debian-setup-user.sh "user1 user2"
+```
+
 `functions/` -- Directory with scripts (something similar "playbooks" and "modules" in [Ansible](https://github.com/ansible/ansible)). This directory contents should be the same across all branches and you should edit existing files only to fix their functionality, not change or add new. To add new functionality you should create a new script.
 
 To create a new system setup you should:
@@ -57,3 +65,5 @@ You can replace the "make.sh" script with Containerfile and nothing will change 
 About podman images -- i used `--squash` option so that the newly built image has only one layer (tar file when importing it)
 
 Maybe i should just direct import it as a dir :)
+
+Maybe i should invoke "functions" using a function? Makes for easier syntax writing
