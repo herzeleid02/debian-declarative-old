@@ -6,7 +6,7 @@ set -o posix
 echo "installing in chroot..." # debug
 apt-get update
 apt-get upgrade -y
-apt-get install -y systemd bash less
+apt-get install -y systemd bash less locales ca-certificates
 
 # placeholder for functions (user packages should come later)
 
