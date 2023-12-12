@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 set -o posix
 
 # do not edit this script except for fixing issues with the basic setup
