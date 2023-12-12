@@ -12,7 +12,6 @@ apt-get install -y systemd bash less locales ca-certificates
 
 # user creation
 
-
 for user in $users; do
 	useradd -s /bin/bash -m $user
 done
