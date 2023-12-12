@@ -17,6 +17,11 @@ for user in $users; do
 	useradd -s /bin/bash -m $user
 done
 
+for func in $functions; do
+	echo "{$project_mount}/$func" debug
+	${project_mount}/function/$func
+done
+
 ### installing user-defined packages (build.sh)
 apt-get install -y ${apt_packages}
 

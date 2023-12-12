@@ -23,6 +23,8 @@ podman run \
 	-e hostname="${hostname}" \
 	-e users="${users}" \
 	-e apt_packages="${apt_packages}" \
+	-e project_mount="${project_mount}" \
+	-e functions="${functions}" \
 	--name ${container_name} \
 	--volume ${project_directory}:${project_mount}:z ${container_image} \
 	${project_mount}/main.sh "$@"
